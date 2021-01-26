@@ -96,6 +96,11 @@ h1, h2, p {
             }
 
             input {
+                padding: 0 $gutter;
+
+                @include font-size(16);
+                color: $white;
+                
                 background: rgba(255, 255, 255, 0.15);
                 
                 border: 1px solid rgba(255, 255, 255, 0.3);
