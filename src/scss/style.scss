@@ -26,7 +26,8 @@ h1, h2, p {
     justify-content: center;
     align-items: center;
 
-    height: 100%;
+
+    padding: $gutter*3 $gutter;
 
     background-image: url('../assets/bgEffect.png');
     background-position: center;
@@ -35,75 +36,86 @@ h1, h2, p {
 
     overflow-x: hidden;
 }
-
 .img {
     &-left-top {
         position: absolute;
-        top: -100px;
+        top: -140px;
         right: auto;
         bottom: auto;
+        left: -40px; 
+    
+        width: 352px;
+        height: 360px;
     }
     &-right {
         position: absolute;
-        top: 114px;
+        top: 10%;
         bottom: auto;
         left: auto;
-    }
+
+        right: -195px;
+            
+        width: 639px;
+        height: 737px;
+}
     &-left-bottom {
         position: absolute;
         top: auto;
         right: auto;
+
+        bottom: 10px;
+        left: -40px;
+
+        width: 354px;
+        height: 354px;
     }
-} 
-
+}
 .info {
-    display: flex;
-    justify-content: space-between;
-
-    height: 404px;
+    width: 500px;
+    
+    padding: $gutter*2 $gutter;
 
     z-index: 2;
-    
+
     &__title {
-        width: 480px;
-
         h1 {
-            @include font-size(48);
+            max-width: 240px;
+            
+            padding-top: $gutter*3;
+            
             font-family: $font-lato;
-            font-weight: $bold;
+            @include font-size(26);
             color: $white;
-    
-            text-transform: capitalize;
         }
-
         p {
-            width: 383px;
+            max-width: 370px;
 
             font-family: $font-openSans;
             @include font-size(18);
+
+            padding: $gutter 0;
+
             color: $white;
         }
-
         .info__submit {
-            position: relative;
-            
+            display: flex;
+            flex-direction: column;
+
             label {
-                width: 0;
-                height: 0;
-
-                opacity: 0;
-                visibility: hidden;
+                display: none;
             }
-
             input {
-                padding: 0 $gutter;
+                height: 60px;
+
+                padding:0 $gutter/2;
+                margin-bottom: $gutter/2;
 
                 @include font-size(16);
-                color: $white;
+                color: $lavenderGray;
                 
-                background: rgba(255, 255, 255, 0.15);
+                background: $rgbaWith-15;
                 
-                border: 1px solid rgba(255, 255, 255, 0.3);
+                border: 1px solid $rgbaWith-3;
                 border-radius: 8px;
                 
                 backdrop-filter: blur(45px);
@@ -111,21 +123,22 @@ h1, h2, p {
                 outline: none;
 
                 &::placeholder {
-                    padding-left: $gutter*2;
-
                     @include font-size(16);
                     font-family: $font-lato;
                     line-height: 1.6;
                     color: $lavenderGray;
                 }
             }
-            button {              
+            button {
+                height: 50px;
+
                 font-family: $font-lato;
                 @include font-size(16);
                 font-weight: $bold;
                 color: $white;
 
                 background: $gigas;
+                box-shadow: 0px 4px 15px $rgbaWith-2;
 
                 border-radius: 8px;
 
@@ -135,14 +148,12 @@ h1, h2, p {
         }
     }
     &__card {
+        margin-top: $gutter*2;
+
         .card {
-            position: relative;
+            padding: $gutter;
 
-            height: 300px;
-
-            padding: 40px 50px;
-
-            background: rgba(255, 255, 255, 0.15);
+            background: $rgbaWith-15;
             backdrop-filter: blur(45px);
 
             border-radius: 20px;
@@ -159,7 +170,7 @@ h1, h2, p {
                 height: 100%;
                 width: 50%;
 
-                border: solid 2px rgba(255, 255, 255, 0.4);
+                border: solid 2px $rgbaWith-4;
                 border-right: none;
 
                 box-sizing: border-box;
@@ -175,16 +186,16 @@ h1, h2, p {
                 height: 100%;
                 width: 50%;
 
-                border: solid 2px rgba(255, 255, 255, 0.3);
+                border: solid 2px $rgbaWith-3;
                 border-left: none;
 
                 box-sizing: border-box;
                 border-radius: 0 20px 20px 0;
             }
             &__title {
-                padding-bottom: $gutter*3;
-                
                 h2 {
+                    padding-bottom: $gutter*3;
+                    
                     font-family: $font-lato;
                     @include font-size(20);
                     line-height: 30px;
@@ -193,7 +204,7 @@ h1, h2, p {
             }
             &__chip {
                 padding-bottom: $gutter*3;
-                
+
                 img {
                     width: 60px;
                     height: 43px;
@@ -203,8 +214,6 @@ h1, h2, p {
                 display: flex;
                 justify-content: space-between;
 
-                @include font-size(20);
-                
                 .footer-text {
                     font-family: $font-lato;
                     @include font-size(16);
@@ -237,159 +246,94 @@ h1, h2, p {
                     justify-content: center;
                     align-items: flex-end;
                 }
-
             }
         }
     }
 }
 
-
 //
-//  SMALL DEVICES
-//_________________________________________
-@media (max-width: 991.98px) {
-    body {
-        width: 100%;
-
-        overflow: hidden;
-    }
+// SMALL DEVICES
+//____________________________________________
+@media (max-width: 992px) {
     .container {
-        padding: 0 $gutter; 
-
-        max-width: 100%;
         min-height: 100%;
     }
-    .img {
-        &-left-top {
-            left: -68px; 
-    
-            width: 252px;
-            height: 260px;
-        }
-        &-right {
-            right: -195px;
-            
-            width: 439px;
-            height: 437px;
-        }
-        &-left-bottom {
-            bottom: -175px;
-            left: -87px;
-    
-            width: 254px;
-            height: 254px;
-        }
-    }    
-    .info {
-        flex-direction: column;
-        width: 100%;
-    
-        &__title {
-            max-width: 100%;
-    
-            h1 {
-                @include font-size(26);
-                max-width: 240px;
-            }
-    
-            p {
-                max-width: 100%;
-                width: 370px;
-  
-                font-family: $font-openSans;
-                @include font-size(18);
-    
-                padding: $gutter 0;
-    
-                color: $white;
-            }
-            .info__submit {
-                width: 100%;
-                margin: $gutter 0;
-
-                input {
-                    height: 60px;
-                    width: calc(100% - #{$gutter/2});
-                    display: block;
-                    margin-bottom: $gutter/2;
-                }
-                button {
-                    width: 100%;
-                    height: 50px;
-
-                    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
-                }
-            }
-        }
-        &__card {
-            width: 100%;
-
-            padding: $gutter*3 0;
-        }
-    }
 }
 
 
 //
-//  LARGE DEVICES
-//_________________________________________
-@media (min-width: 768px) {
+// LARGE DEVICES
+//____________________________________________
+
+@media (min-width: 992px) {
     .container {
-        width: 100%;
+        height: 100vh;
     }
     .img {
         &-left-top {
-            left: 18px; 
-    
-            width: 282px;
-            height: 290px;
+            top: -170px;
+            left: 10%; 
+
+            width: 452px;
+            height: 460px;
         }
         &-right {
-            right: -132px;
-    
+            top: 15%;
+            right: 0;
+
             width: 639px;
-            height: 637px;
+            height: 737px;
         }
         &-left-bottom {
-            bottom: 65px;
-            left: 20px;
-    
-            width: 284px;
-            height: 284px;
+            bottom: 130px;
+            left: 11%;
         }
     }
     .info {
+        display: flex;
+        align-items: center;
+
         width: 1117px;
 
         &__title {
-            width: 480px;
+            width: 50%;
 
-            p {
-                padding: $gutter 0 $gutter*3;
+            h1 {
+                max-width: 480px;
+                @include font-size(48);
             }
 
             .info__submit {
-                height: 80px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                position: relative;
 
                 input {
                     width: 100%;
-                    height: 80px;
+                    height: 70px;
                 }
-
-                button {
+                .button__apply {
                     position: absolute;
-                    bottom: auto;
-                    left: auto;
-                    top: $gutter*2;
-                    right: $gutter;
-                    
-                    width: 120px;
-                    height: 60px;
+                    right: 8px;
+                    top: 10px;
+
+                    width: 110px;
+                    height: 50px;
                 }
             }
         }
         &__card {
-            width: 500px;
+            padding-left: 120px;
+
+            .card {
+                width: 500px;
+                height: 300px;
+                min-width: 370px;
+
+                padding: $gutter*2;
+            }
         }
     }
 }
