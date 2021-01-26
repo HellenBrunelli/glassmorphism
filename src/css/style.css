@@ -63,6 +63,10 @@ h1, h2, p {
         opacity: 0;
         visibility: hidden; }
       .info__title .info__submit input {
+        padding: 0 16px;
+        font-size: 16px;
+        font-size: calc(16 * 0.0625)rem;
+        color: #fff;
         background: rgba(255, 255, 255, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 8px;
