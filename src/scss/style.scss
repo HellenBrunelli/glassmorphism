@@ -1,0 +1,390 @@
+@import './variables';
+@import './mixins';
+
+//
+//  ALL DEVICES
+//_________________________________________
+
+body {
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(to right, $gigas, $electricViolet);
+}
+
+//reset css
+h1, h2, p {
+    margin: 0;
+}
+
+.container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    background-image: url('../assets/bgEffect.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    overflow-x: hidden;
+}
+
+.img {
+    &-left-top {
+        position: absolute;
+        top: -100px;
+        right: auto;
+        bottom: auto;
+    }
+    &-right {
+        position: absolute;
+        top: 114px;
+        bottom: auto;
+        left: auto;
+    }
+    &-left-bottom {
+        position: absolute;
+        top: auto;
+        right: auto;
+    }
+} 
+
+.info {
+    display: flex;
+    justify-content: space-between;
+
+    height: 404px;
+
+    z-index: 2;
+    
+    &__title {
+        width: 480px;
+
+        h1 {
+            @include font-size(48);
+            font-family: $font-lato;
+            font-weight: $bold;
+            color: $white;
+    
+            text-transform: capitalize;
+        }
+
+        p {
+            width: 383px;
+
+            font-family: $font-openSans;
+            @include font-size(18);
+            color: $white;
+        }
+
+        .info__submit {
+            position: relative;
+            
+            label {
+                width: 0;
+                height: 0;
+
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            input {
+                background: rgba(255, 255, 255, 0.15);
+                
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 8px;
+                
+                backdrop-filter: blur(45px);
+                
+                outline: none;
+
+                &::placeholder {
+                    padding-left: $gutter*2;
+
+                    @include font-size(16);
+                    font-family: $font-lato;
+                    line-height: 1.6;
+                    color: $lavenderGray;
+                }
+            }
+            button {              
+                font-family: $font-lato;
+                @include font-size(16);
+                font-weight: $bold;
+                color: $white;
+
+                background: $gigas;
+
+                border-radius: 8px;
+
+                outline: none;
+                border: none;
+            }
+        }
+    }
+    &__card {
+        .card {
+            position: relative;
+
+            height: 300px;
+
+            padding: 40px 50px;
+
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(45px);
+
+            border-radius: 20px;
+
+            box-sizing: border-box;
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                
+                height: 100%;
+                width: 50%;
+
+                border: solid 2px rgba(255, 255, 255, 0.4);
+                border-right: none;
+
+                box-sizing: border-box;
+                border-radius: 20px 0 0 20px;
+            }
+            &::after {
+                content: '';
+
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                
+                height: 100%;
+                width: 50%;
+
+                border: solid 2px rgba(255, 255, 255, 0.3);
+                border-left: none;
+
+                box-sizing: border-box;
+                border-radius: 0 20px 20px 0;
+            }
+            &__title {
+                padding-bottom: $gutter*3;
+                
+                h2 {
+                    font-family: $font-lato;
+                    @include font-size(20);
+                    line-height: 30px;
+                    color: $white;
+                }
+            }
+            &__chip {
+                padding-bottom: $gutter*3;
+                
+                img {
+                    width: 60px;
+                    height: 43px;
+                }
+            }
+            &__footer {
+                display: flex;
+                justify-content: space-between;
+
+                @include font-size(20);
+                
+                .footer-text {
+                    font-family: $font-lato;
+                    @include font-size(16);
+                    line-height: 18px;
+                    color: $white;
+                    
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+
+                    &--large {
+                        @include font-size(20);
+                        line-height: 30px;
+                    
+                        letter-spacing: 0.07em;
+                    }
+                }
+                &-info {
+                    p{
+                        @include font-size(20);
+                        font-family: $font-lato;
+                        color: $white;
+
+                        & + p {
+                            margin-top: $gutter/2;
+                        }
+                    }
+                }
+                &-date {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                }
+
+            }
+        }
+    }
+}
+
+
+//
+//  SMALL DEVICES
+//_________________________________________
+@media (max-width: 991.98px) {
+    body {
+        width: 100%;
+
+        overflow: hidden;
+    }
+    .container {
+        padding: 0 $gutter; 
+
+        max-width: 100%;
+        min-height: 100%;
+    }
+    .img {
+        &-left-top {
+            left: -68px; 
+    
+            width: 252px;
+            height: 260px;
+        }
+        &-right {
+            right: -195px;
+            
+            width: 439px;
+            height: 437px;
+        }
+        &-left-bottom {
+            bottom: -175px;
+            left: -87px;
+    
+            width: 254px;
+            height: 254px;
+        }
+    }    
+    .info {
+        flex-direction: column;
+        width: 100%;
+    
+        &__title {
+            max-width: 100%;
+    
+            h1 {
+                @include font-size(26);
+                max-width: 240px;
+            }
+    
+            p {
+                max-width: 100%;
+                width: 370px;
+  
+                font-family: $font-openSans;
+                @include font-size(18);
+    
+                padding: $gutter 0;
+    
+                color: $white;
+            }
+            .info__submit {
+                width: 100%;
+                margin: $gutter 0;
+
+                input {
+                    height: 60px;
+                    width: calc(100% - #{$gutter/2});
+                    display: block;
+                    margin-bottom: $gutter/2;
+                }
+                button {
+                    width: 100%;
+                    height: 50px;
+
+                    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+        &__card {
+            width: 100%;
+
+            padding: $gutter*3 0;
+        }
+    }
+}
+
+
+//
+//  LARGE DEVICES
+//_________________________________________
+@media (min-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    .img {
+        &-left-top {
+            left: 18px; 
+    
+            width: 282px;
+            height: 290px;
+        }
+        &-right {
+            right: -132px;
+    
+            width: 639px;
+            height: 637px;
+        }
+        &-left-bottom {
+            bottom: 65px;
+            left: 20px;
+    
+            width: 284px;
+            height: 284px;
+        }
+    }
+    .info {
+        width: 1117px;
+
+        &__title {
+            width: 480px;
+
+            p {
+                padding: $gutter 0 $gutter*3;
+            }
+
+            .info__submit {
+                height: 80px;
+
+                input {
+                    width: 100%;
+                    height: 80px;
+                }
+
+                button {
+                    position: absolute;
+                    bottom: auto;
+                    left: auto;
+                    top: $gutter*2;
+                    right: $gutter;
+                    
+                    width: 120px;
+                    height: 60px;
+                }
+            }
+        }
+        &__card {
+            width: 500px;
+        }
+    }
+}
