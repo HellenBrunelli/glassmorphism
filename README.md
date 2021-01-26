@@ -6,7 +6,7 @@
 <br/>
 <br/>
 
-Projeto desenvolvido a partir do vídeo tutorial da Gabriela Pinheiro onde abora o tema Glass Morphism (link nas refeências).
+Projeto desenvolvido a partir do vídeo tutorial da Gabriela Pinheiro onde aborda o tema Glass Morphism (link nas referências).
 </br>
 </br>
 
