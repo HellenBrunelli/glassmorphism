@@ -151,8 +151,8 @@ h1, h2, p {
         margin-top: $gutter*2;
 
         .card {
-            padding: $gutter;
-
+            padding: $gutter*2;
+            
             background: $rgbaWith-15;
             backdrop-filter: blur(45px);
 
@@ -331,8 +331,6 @@ h1, h2, p {
                 width: 500px;
                 height: 300px;
                 min-width: 370px;
-
-                padding: $gutter*2;
             }
         }
     }

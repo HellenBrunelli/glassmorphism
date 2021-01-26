@@ -101,7 +101,7 @@ h1, h2, p {
   .info__card {
     margin-top: 32px; }
     .info__card .card {
-      padding: 16px;
+      padding: 32px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(45px);
       border-radius: 20px;
@@ -218,7 +218,6 @@ h1, h2, p {
       .info__card .card {
         width: 500px;
         height: 300px;
-        min-width: 370px;
-        padding: 32px; } }
+        min-width: 370px; } }
 
 /*# sourceMappingURL=style.css.map */
