@@ -1,5 +1,9 @@
-#  Glassmorphism Tutorial
+#  <font color='#ff2fa8'>Glass Morphism</font>
 
+
+<img src="./src/assets/capaGlass.png" alt="Page Mobile" width="100%"/>
+
+<br/>
 <br/>
 
 Projeto desenvolvido a partir do vídeo tutorial da Gabriela Pinheiro onde abora o tema Glass Morphism (link nas refeências).
